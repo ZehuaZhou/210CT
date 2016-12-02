@@ -1,0 +1,12 @@
+import random
+def fun(n):#define the function
+    l=len(n)      #1
+    for i in range(0,l-1):#nx1
+        a=random.randint(0,l-1)#n #a and b are random value in the list, use temp to change their position
+        b=random.randint(0,l-1)#n
+        temp=n[a]#n
+        n[a]=n[b]#n
+        n[b]=temp#n
+    return n #1
+print (fun([5,3,8,6,1,9,2,7]))
+
