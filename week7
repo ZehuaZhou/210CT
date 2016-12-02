@@ -1,0 +1,103 @@
+class Graph:
+    def __init__(self):
+        self.dictionary={}
+
+    def addnode(self,node):
+        if node not in self.dictionary:
+            self.dictionary[node] = []
+        else:
+            print("node is present")
+
+    def addedge(self,nodex,nodey):
+        if nodex in self.dictionary and nodey in self.dictionary:
+            if nodey not in self.dictionary[nodex]:
+                self.dictionary[nodex].append(nodey)
+            if nodex not in self.dictionary[nodey]:
+                self.dictionary[nodey].append(nodex)
+            else:
+                print("node missing")
+
+graph=Graph()
+graph.addnode(1)
+graph.addnode(2)
+graph.addnode(3)
+graph.addnode(4)
+graph.addnode(5)
+
+graph.addedge(1,2)
+graph.addedge(1,3)
+graph.addedge(1,4)
+graph.addedge(1,5)
+graph.addedge(2,3)
+graph.addedge(2,4)
+graph.addedge(2,5)
+graph.addedge(3,4)
+graph.addedge(3,5)
+graph.addedge(4,5)
+
+print(graph.dictionary)
+"""class Graph:
+    __init__(self):
+        self.dictionary<-{}
+
+    ADDNODE(self,node):
+        IF node IS NOT IN self.dictionary:
+            self.dictionary[node] <- []
+        ELSE
+            print("node is present")
+
+     ADDEDGE(self,nodex,nodey):
+        IF nodex IS IN self.dictionary and nodey in self.dictionary:
+            IF nodey IS NOT IN self.dictionary[nodex]:
+                append nodey to self.dictionary[nodex]
+            IF nodex IS NOT IN self.dictionary[nodey]:
+                append nodex to self.dictionary[nodey]
+            ELSE
+                print("node missing")"""
+
+
+#DFS
+def dfs(graph,v):
+    stack=[]
+    visited=[]
+    stack.append(v)
+    while stack!=[]:
+        u=stack.pop()
+        if u not in visited:
+            visited.append(u)
+            for edges in graph.dictionary:
+                for e in graph.dictionary[edges]:
+                    stack.append(e)
+    return visited
+
+#BFS
+def bfs(graph,v,dfsresult):
+    class Queue(object):
+        def __init__(self, queue = None):
+            if queue == None:
+                self.queue = []
+            else:
+                self.queue = list(queue)
+        def dequeue(self):
+            return self.queue.pop(0)
+        def enqueue(self, node):
+            self.queue.append(node)
+    dfsLength = len(dfsresult)
+    Q = Queue()
+    visited=[]
+    Q.enqueue(v)
+    while Q !=[]:
+        u=Q.dequeue()
+        if u not in visited:
+            visited.append(u)
+        for edges in graph.dictionary:
+            for e in graph.dictionary[edges]:
+                Q.enqueue(e)
+        if dfsLength is len(visited):
+            return visited
+            break
+v=1
+print()
+dfsresult = dfs(graph,v)
+print("DFS = ", dfsresult)
+print ("BFS = ", bfs(graph,v,dfsresult))
