@@ -1,0 +1,19 @@
+def longestSequence(array):
+    count = 1#count the elements of each sequence
+    lst=[]#create an empty list to add 
+    for i in range(0,len(array)-1):#for loops lets previous element to be compared with next element and the counter is add to the list and then reset
+        if array[i]>=array[i+1]: 
+            lst.append(count)
+            count=1
+        elif array[i]<array[i+1]:#if the previous element is smaller than next element, then the count is only increase by 1
+            count += 1
+    lst.append(count)
+    longest=max(lst)#find the largest element of the list
+    index=lst.index(longest)#find the position of the largest element
+    start = 0
+    for j in range(index):#create the largest sequence from the array
+        start = start + lst[j]#it is the start of the largest list
+    longestlst = array[start:start+longest]#create the largest sub-sequence from array
+    return longestlst#return the longest increasing sub-sequence
+array=[1,2,3,4,5,6,1,8,9,1,27]
+print (longestSequence(array))
