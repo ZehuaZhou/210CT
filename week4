@@ -29,3 +29,4 @@ print(binarySearch(sortlist, lowvalue, highvalue, start, end))
         ELSE
             RETURN TRUE
 """
+#bigO = log(n)
