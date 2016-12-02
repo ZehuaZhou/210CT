@@ -1,0 +1,14 @@
+def count(x):
+    zeros=0#1 #we are going to counting zeros, so we calculator the zeros from 0
+    for n in range(1,x+1):#n
+        while n>0:#n*n
+            if n%5 == 0:#n*n
+               zeros = zeros + 1#n*n
+               n=n/5#n*n
+            else:#n*n
+                break#n*n
+    print (zeros)#1
+
+s = input()
+s = int(s)
+count(s)
