@@ -1,0 +1,30 @@
+def primeNumber(a,b):
+    if a<2:
+        print (a,"is not a prime number")
+    else:
+        mod = a % b
+        if b == 1:
+            print (a, "is a prime number")
+        elif mod == 0:
+            print (a, "is not a prime number")
+        else:
+            b = b - 1
+            primeNumber(a,b)
+
+a = int(input("plz int a number"))
+b = a-1
+primeNumber(a,b)
+       
+"""PRIMENUMBER(a,b)
+    IF A<2
+        print (a, "is not a prime number")
+    ELSE
+        mod <- a%b
+        IF b = 1
+           print (a, "is a prime number")
+        ELIF mod = 0
+           print (a,"is not a prime number")
+        ELSE
+           b<-b-1
+           PRIMENUMBER(a,b)
+"""
