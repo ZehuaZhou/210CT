@@ -1,0 +1,16 @@
+def rev(s):
+    if s==[]:
+        pass
+    else:
+        print(s[len(s)-1])
+        rev(s[:-1])
+
+sen = "this is awsome".split(" ")
+rev(sen)
+
+"""REV(s)
+    IF s=[]
+       PASS
+    ELSE
+       print(s[length(s)-1])
+       REV(s[count from the last element of list])"""
