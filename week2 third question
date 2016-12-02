@@ -1,0 +1,18 @@
+"""ADD_FUNCTION(a,b):
+      FOR i <- 1 to matrixSize
+          FOR j <- 1 to matrixSize
+            output[i][j]<-a[i][j]+b[i][j]
+      REUTRN output
+   SUBT_FUNCTION(a,b):
+      FOR i <- 1 to matrixSize
+          FOR j <- 1 to matrixSize
+            output[i][j]<-a[i][j]-b[i][j]
+      REUTRN output
+   MULTIPLY_FUNTION(a,b):
+      FOR i <- 1 to matrixSize
+          FOR j <- 1 to martrixSize
+          output1[i][j]<-a[i][j]*b[i][j]
+          output2[i][j]<-a[i+1][j]*b[i][j+1]
+          output3[i][j]<-a[i+2][j]*b[i][j+2]
+          output<-ouput1+output2+ouput3
+        REUTRN output"""
