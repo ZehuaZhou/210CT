@@ -1,0 +1,31 @@
+def binarySearch(sortlist, lowvalue, highvalue, start, end):
+    if end < start:#if the end bigger than the end value then we can't find the mid point anymore
+        return False
+    else:
+        mid=int((end - start)/2)+start#find the mid point
+        if sortlist[mid]>=highvalue:#if mid point is bigger or equal the high value then recursion function, forget top end of list after mid point
+            return binarySearch(sortlist, lowvalue, highvalue, start, mid-1)
+        elif sortlist[mid]<=lowvalue:#if mid point is smaller or equal the low value then recursion function, forget bottom end of list before mid point
+            return binarySearch(sortlist, lowvalue, highvalue, mid+1, end)
+        else:
+            return True
+
+sortlist = [1,2,3,4,5,6,7]
+start = 0
+end = len(sortlist)-1
+lowvalue=int(input("the lowvalue is"))
+highvalue=int(input("the highvalue is"))
+print(binarySearch(sortlist, lowvalue, highvalue, start, end))
+
+"""BINARYSEARCH(sortlist, lowvalue, highvalue, start, end):
+    IF end < start:
+        RETURN FALSE
+    ELSE
+        mid<-int((end - start)/2)+start
+        IF sortlist[mid]>=highvalue
+            RETURN binarySearch(sortlist, lowvalue, highvalue, start, mid-1)
+        ELIF sortlist[mid]<=lowvalue
+            RETURN binarySearch(sortlist, lowvalue, highvalue, mid+1, end)
+        ELSE
+            RETURN TRUE
+"""
