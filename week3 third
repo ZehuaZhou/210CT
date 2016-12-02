@@ -1,0 +1,25 @@
+def fun(inputstring):
+        print(inputstring)
+        vowels = ['a','e','i','o','u','A','E','I','O','U']
+        if inputstring == "":
+        #return back from base case
+            return inputstring
+        if inputstring[0] in vowels:
+        #re-call fun and pass list from second character onwards
+            return fun(inputstring[1:])
+        #store value at inputstring and re-call fun from second character.
+        return inputstring[0] + fun(inputstring[1:])
+
+
+inputstring=str(input("enter a sentence"))
+print(fun(inputstring))
+
+
+"""FUN(inputstring)
+        print(inputstring)
+        vowels<-aeiouAEIOU
+        IF inputstring=[]
+            RETURN inputstring
+        IF inputstring[0] IN vowels
+            RETURN FUN(inputstring[from the bigining])
+        RETURN inputstring[0]+FUN(inputstring[from the bigining])"""
